@@ -1,4 +1,5 @@
 export { Categories } from "@/components/shared/categories";
+export { CheckboxFiltersGroup } from "@/components/shared/checkbox-filters-group";
 export { Container } from "@/components/shared/container";
 export { Filters } from "@/components/shared/filters";
 export { FilterCheckbox } from "@/components/shared/filter-checkbox";

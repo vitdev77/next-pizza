@@ -43,7 +43,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
         limit={6}
         defaultItems={[
           { text: "Сырный соус", value: "1" },
-          { text: "Моццарелла", value: "2" },
+          { text: "Моцарелла", value: "2" },
           { text: "Чеснок", value: "3" },
           { text: "Солёные огурчики", value: "4" },
           { text: "Красный лук", value: "5" },
@@ -51,19 +51,19 @@ export const Filters: React.FC<Props> = ({ className }) => {
         ]}
         items={[
           { text: "Сырный соус", value: "1" },
-          { text: "Моццарелла", value: "2" },
+          { text: "Моцарелла", value: "2" },
           { text: "Чеснок", value: "3" },
           { text: "Солёные огурчики", value: "4" },
           { text: "Красный лук", value: "5" },
           { text: "Томаты", value: "6" },
           { text: "Сырный соус", value: "1" },
-          { text: "Моццарелла", value: "2" },
+          { text: "Моцарелла", value: "2" },
           { text: "Чеснок", value: "3" },
           { text: "Солёные огурчики", value: "4" },
           { text: "Красный лук", value: "5" },
           { text: "Томаты", value: "6" },
           { text: "Сырный соус", value: "1" },
-          { text: "Моццарелла", value: "2" },
+          { text: "Моцарелла", value: "2" },
           { text: "Чеснок", value: "3" },
           { text: "Солёные огурчики", value: "4" },
           { text: "Красный лук", value: "5" },

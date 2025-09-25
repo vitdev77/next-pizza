@@ -17,9 +17,9 @@ const Header: React.FC<Props> = ({ className }) => {
         <div className="flex items-center gap-4">
           <Image src={"/logo.svg"} alt="Logo" width={42} height={42} />
           <div>
-            <h1 className="text-2xl uppercase font-black">Nextjs App</h1>
+            <h1 className="text-2xl uppercase font-black">Next Pizza</h1>
             <p className="text-sm text-gray-400 leading-3">
-              Super App Description
+              вкусней уже некуда
             </p>
           </div>
         </div>

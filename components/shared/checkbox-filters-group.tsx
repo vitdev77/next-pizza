@@ -25,7 +25,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   items,
   defaultItems,
   limit = 5,
-  searchInputPlaceholder = "Поиск...",
+  searchInputPlaceholder = "Найти в списке",
   onChange,
   defaultValue,
   className,
@@ -73,7 +73,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       {items.length > limit && (
         <div className={showAll ? "border-t border-t-neutral-100 mt-4" : ""}>
           <button
-            className="text-primary mt-3"
+            className="text-primary mt-3 cursor-pointer"
             onClick={() => setShowAll(!showAll)}
           >
             {showAll ? "Скрыть" : "+ Показать все"}

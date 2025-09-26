@@ -1,9 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    domains: ["media.dodostatic.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "media.dodostatic.net",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.dribbble.com",
+        pathname: "**",
+      },
+    ],
   },
 };
 

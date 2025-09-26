@@ -32,7 +32,7 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                   {
                     id: 2,
@@ -40,7 +40,7 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                   {
                     id: 3,
@@ -48,7 +48,7 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                   {
                     id: 4,
@@ -56,7 +56,7 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                   {
                     id: 5,
@@ -64,13 +64,13 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                 ]}
                 categoryId={1}
               />
               <ProductsGroupList
-                title="Завтрак"
+                title="Комбо"
                 items={[
                   {
                     id: 1,
@@ -78,7 +78,7 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                   {
                     id: 2,
@@ -86,7 +86,7 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                   {
                     id: 3,
@@ -94,7 +94,7 @@ export default function Home() {
                     price: 550,
                     items: [{ price: 550 }],
                     imageUrl:
-                      "https://media.dodostatic.net/image/r:292x292/0195adb927fd7388a6496240b185adb6.avif",
+                      "https://media.dodostatic.net/image/r:292x292/11ee7d5f23324124bbc5bdc88742f3bf.avif",
                   },
                 ]}
                 categoryId={2}

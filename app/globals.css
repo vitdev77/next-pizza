@@ -112,6 +112,12 @@
   --sidebar-ring: oklch(0.541 0.281 293.009);
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .scrollbar::-webkit-scrollbar {
   width: 4px;
 }

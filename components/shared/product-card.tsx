@@ -1,6 +1,6 @@
+import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import * as React from "react";
 import { Title } from "@/components/shared";
 import { Button } from "@/components/ui";
 import { Plus } from "lucide-react";
@@ -24,7 +24,7 @@ export const ProductCard: React.FC<Props> = ({
     <div className={className}>
       <Link href={`/product/${id}`}>
         <div className="flex justify-center p-6 bg-secondary rounded-lg h-[260px]">
-          <Image height={215} width={215} src={imageUrl} alt={name} />
+          <Image height={212} width={215} src={imageUrl} alt={name} />
         </div>
 
         <Title text={name} size="sm" className="font-bold mb-1 mt-3" />

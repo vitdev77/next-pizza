@@ -7,7 +7,12 @@
     "build": "next build --turbopack",
     "start": "next start",
     "prisma:push": "prisma db push",
-    "prisma:studio": "prisma studio"
+    "prisma:push_fr": "prisma db push --force-reset",
+    "prisma:studio": "prisma studio",
+    "prisma:seed": "prisma db seed"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
@@ -18,6 +23,8 @@
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slider": "^1.3.6",
     "@radix-ui/react-slot": "^1.2.3",
+    "@types/bcrypt": "^6.0.0",
+    "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.544.0",
@@ -27,6 +34,7 @@
     "react-dom": "19.1.0",
     "react-use": "^17.6.0",
     "tailwind-merge": "^3.3.1",
+    "ts-node": "^10.9.2",
     "vaul": "^1.1.2",
     "zustand": "^5.0.8"
   },

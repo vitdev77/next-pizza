@@ -32,11 +32,6 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         console.log(error);
       }
     },
-    // () => {
-    //   Api.products.search(searchQuery).then((items) => {
-    //     setProducts(items);
-    //   });
-    // },
     250,
     [searchQuery]
   );

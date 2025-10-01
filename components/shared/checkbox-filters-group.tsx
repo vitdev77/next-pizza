@@ -5,7 +5,8 @@ import {
   FilterCheckbox,
   FilterCheckboxProps,
 } from "@/components/shared/filter-checkbox";
-import { Input, Skeleton } from "@/components/ui";
+import { Button, Input, Skeleton } from "@/components/ui";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 type Item = FilterCheckboxProps;
 
@@ -52,7 +53,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
           .map((_, index) => (
             <Skeleton key={index} className="h-6 mb-4 rounded-[8px]" />
           ))}
-        <Skeleton className="h-6 w-28 mb-4 rounded-[8px]" />
+        <Skeleton className="h-4 w-28 mb-4 rounded-[8px]" />
       </div>
     );
   }
@@ -93,12 +94,15 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
 
       {items.length > limit && (
         <div className={showAll ? "border-t border-t-neutral-100 mt-4" : ""}>
-          <button
-            className="text-primary mt-3 cursor-pointer"
+          <Button
+            variant={"link"}
+            size={"sm"}
+            className="flex items-center gap-1 !px-0 mt-3 cursor-pointer"
             onClick={() => setShowAll(!showAll)}
           >
-            {showAll ? "Скрыть" : "+ Показать все"}
-          </button>
+            {showAll ? "Скрыть" : "Показать все"}
+            {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+          </Button>
         </div>
       )}
     </div>

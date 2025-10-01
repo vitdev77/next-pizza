@@ -115,7 +115,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
       </div>
 
       <CheckboxFiltersGroup
-        title="Ингридиенты:"
+        title="Ингредиенты:"
         name="ingredients"
         className="mt-5"
         limit={6}

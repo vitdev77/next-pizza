@@ -28,7 +28,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   title,
   items,
   defaultItems,
-  limit = 5,
+  limit = 4,
   loading,
   searchInputPlaceholder = "Найти в списке",
   onClickCheckbox,
@@ -71,6 +71,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       {showAll && (
         <div className="mb-5">
           <Input
+            name="SearchIng"
             onChange={onChangeSearchInput}
             placeholder={searchInputPlaceholder}
             className="bg-gray-50 border-none"

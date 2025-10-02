@@ -60,6 +60,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         />
         <input
           placeholder="Найти пиццу..."
+          name="Search"
           type="text"
           className="w-full rounded-xl outline-none bg-gray-100 pl-11"
           onFocus={() => setFocused(true)}

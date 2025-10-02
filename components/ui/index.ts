@@ -3,6 +3,7 @@ export { Checkbox } from "@/components/ui/checkbox";
 export { Dialog } from "@/components/ui/dialog";
 export { Drawer } from "@/components/ui/drawer";
 export { Input } from "@/components/ui/input";
+export { Label } from "@/components/ui/label";
 export { Popover } from "@/components/ui/popover";
 export { RangeSlider } from "@/components/ui/range-slider";
 export { Select } from "@/components/ui/select";

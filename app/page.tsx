@@ -31,40 +31,35 @@ export default function Home() {
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                   {
                     id: 2,
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                   {
                     id: 3,
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                   {
                     id: 4,
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                   {
                     id: 5,
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                 ]}
                 categoryId={1}
@@ -77,24 +72,21 @@ export default function Home() {
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                   {
                     id: 2,
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                   {
                     id: 3,
                     name: "Test Product",
                     price: 550,
                     items: [{ price: 550 }],
-                    imageUrl:
-                      "https://cdn.dribbble.com/userupload/45108509/file/fd7a75e8394e2165e4da8ddec74358a4.png?resize=512x512&vertical=center",
+                    imageUrl: "/static/000D3A39D824A82E11E9AFA6B0FFC349.png",
                   },
                 ]}
                 categoryId={2}

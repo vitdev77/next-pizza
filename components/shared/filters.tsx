@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Title, CheckboxFiltersGroup } from "@/components/shared";
 import { Input, Label, RangeSlider } from "@/components/ui";
-import { useFilterIngredients } from "@/hooks/useFilterIngredients";
+import { useFilterIngredients } from "@/hooks/use-filter-ingredients";
 import { useSet } from "react-use";
 import qs from "qs";
 import { useRouter, useSearchParams } from "next/navigation";

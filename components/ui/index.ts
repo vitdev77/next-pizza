@@ -1,5 +1,16 @@
+export {
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 export { Button } from "@/components/ui/button";
 export { Checkbox } from "@/components/ui/checkbox";
+export {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 export { Dialog } from "@/components/ui/dialog";
 export { Drawer } from "@/components/ui/drawer";
 export { Input } from "@/components/ui/input";

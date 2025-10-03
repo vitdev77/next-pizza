@@ -1,11 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  Title,
-  FilterCheckbox,
-  CheckboxFiltersGroup,
-} from "@/components/shared";
+import { Title, CheckboxFiltersGroup } from "@/components/shared";
 import { Input, Label, RangeSlider } from "@/components/ui";
 import { useFilterIngredients } from "@/hooks/useFilterIngredients";
 import { useSet } from "react-use";
@@ -56,25 +52,24 @@ export const Filters: React.FC<Props> = ({ className }) => {
         title="Тип теста"
         name="pizzaTypes"
         className="mb-5"
+        onClickCheckbox={togglePizzaTypes}
+        selected={pizzaTypes}
         items={[
           { text: "Тонкое", value: "1" },
           { text: "Традиционное", value: "2" },
         ]}
-        onClickCheckbox={togglePizzaTypes}
-        selected={pizzaTypes}
       />
-
       <CheckboxFiltersGroup
         title="Размеры"
         name="sizes"
         className="mb-5"
+        onClickCheckbox={toggleSizes}
+        selected={sizes}
         items={[
           { text: "20 см", value: "20" },
           { text: "30 см", value: "30" },
           { text: "40 см", value: "40" },
         ]}
-        onClickCheckbox={toggleSizes}
-        selected={sizes}
       />
 
       {/* Фильтр цен */}

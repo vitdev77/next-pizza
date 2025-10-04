@@ -20,7 +20,9 @@ export const Filters: React.FC<Props> = ({ className }) => {
     text: item.name,
   }));
 
-  const updatePrices = (prices: [number, number]) => {
+  const updatePrices = (prices: number[]) => {
+    console.log(prices, 999);
+
     filters.setPrices("priceFrom", prices[0]);
     filters.setPrices("priceTo", prices[1]);
   };
@@ -112,8 +114,8 @@ export const Filters: React.FC<Props> = ({ className }) => {
         loading={loading}
         defaultItems={items.slice(0, 5)}
         items={items}
-        onClickCheckbox={onAddId}
-        selected={selectedIngredients}
+        onClickCheckbox={filters.setSelectedIngredients}
+        selected={filters.selectedIngredients}
       />
     </div>
   );

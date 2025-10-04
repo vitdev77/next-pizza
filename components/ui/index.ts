@@ -3,20 +3,19 @@ export {
   AccordionItem,
   AccordionContent,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-export { Button } from "@/components/ui/button";
-export { Checkbox } from "@/components/ui/checkbox";
+} from "./accordion";
+export { Button } from "./button";
+export { Checkbox } from "./checkbox";
 export {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-export { Dialog } from "@/components/ui/dialog";
-export { Drawer } from "@/components/ui/drawer";
-export { Input } from "@/components/ui/input";
-export { Label } from "@/components/ui/label";
-export { Popover } from "@/components/ui/popover";
-export { RangeSlider } from "@/components/ui/range-slider";
-export { Select } from "@/components/ui/select";
-export { Skeleton } from "@/components/ui/skeleton";
-export { Slider } from "@/components/ui/slider";
+} from "./collapsible";
+export { Dialog } from "./dialog";
+export { Drawer } from "./drawer";
+export { Input } from "./input";
+export { Label } from "./label";
+export { Popover } from "./popover";
+export { Select } from "./select";
+export { Skeleton } from "./skeleton";
+export { Slider } from "./slider";

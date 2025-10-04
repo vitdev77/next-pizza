@@ -21,8 +21,6 @@ export const Filters: React.FC<Props> = ({ className }) => {
   }));
 
   const updatePrices = (prices: number[]) => {
-    console.log(prices, 999);
-
     filters.setPrices("priceFrom", prices[0]);
     filters.setPrices("priceTo", prices[1]);
   };

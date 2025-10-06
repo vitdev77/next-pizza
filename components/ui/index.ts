@@ -11,7 +11,7 @@ export {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./collapsible";
-export { Dialog } from "./dialog";
+export { Dialog, DialogContent, DialogTitle } from "./dialog";
 export { Drawer } from "./drawer";
 export { Input } from "./input";
 export { Label } from "./label";

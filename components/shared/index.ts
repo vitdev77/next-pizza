@@ -5,6 +5,7 @@ export { Filters } from "./filters";
 export { FilterCheckbox } from "./filter-checkbox";
 export { GroupVariants } from "./group-variants";
 export { Header } from "./header";
+export * from "./modals";
 export { ProductCard } from "./product-card";
 export { ProductImage } from "./product-image";
 export { ProductsGroupList } from "./products-group-list";

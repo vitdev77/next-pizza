@@ -3,11 +3,12 @@
 import { cn } from "@/lib/utils";
 import { Api } from "@/services/api-client";
 import { Product } from "@prisma/client";
-import { Search } from "lucide-react";
+import { Search, SearchIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { useClickAway, useDebounce } from "react-use";
+import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui";
 
 interface Props {
   className?: string;
@@ -54,11 +55,24 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
           className
         )}
       >
-        <Search
+        <InputGroup className="bg-gray-100 relative z-31">
+          <InputGroupInput
+            placeholder="Найти пиццу..."
+            name="Search"
+            type="text"
+            onFocus={() => setFocused(true)}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <InputGroupAddon>
+            <SearchIcon />
+          </InputGroupAddon>
+        </InputGroup>
+        {/* <Search
           size={20}
           className="absolute top-1/2 translate-y-[-50%] left-3 text-gray-400"
-        />
-        <input
+        /> */}
+        {/* <input
           placeholder="Найти пиццу..."
           name="Search"
           type="text"
@@ -66,12 +80,12 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
           onFocus={() => setFocused(true)}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-        />
+        /> */}
         {products.length > 0 && (
           <div
             className={cn(
-              "absolute w-full bg-white rounded-xl py-4 top-12 shadow-md transition-all duration-200 invisible opacity-0 z-30",
-              focused && "visible opacity-100 top-10"
+              "absolute left-[-8px] right-[-8px] bg-white rounded-xl py-4 pt-13 top-0 shadow-md transition-all duration-200 invisible opacity-0 z-30",
+              focused && "visible opacity-100 top-[-8px]"
             )}
           >
             {products.map((product) => (

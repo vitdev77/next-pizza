@@ -8,17 +8,19 @@ const nunito = Nunito({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+  }>
+) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link data-rh="true" rel="icon" href="/logo.svg" />
       </head>
-      <body className={`${nunito.className} antialiased`}>{children}</body>
+      <body className={`${nunito.className} antialiased`}>
+        {props.children}
+      </body>
     </html>
   );
 }

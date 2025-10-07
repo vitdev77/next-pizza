@@ -1,19 +1,11 @@
-export {
-  Accordion,
-  AccordionItem,
-  AccordionContent,
-  AccordionTrigger,
-} from "./accordion";
+export * from "./accordion";
 export { Button } from "./button";
 export { Checkbox } from "./checkbox";
-export {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "./collapsible";
-export { Dialog, DialogContent, DialogTitle } from "./dialog";
+export * from "./collapsible";
+export * from "./dialog";
 export { Drawer } from "./drawer";
 export { Input } from "./input";
+export * from "./input-group";
 export { Label } from "./label";
 export { Popover } from "./popover";
 export { Select } from "./select";

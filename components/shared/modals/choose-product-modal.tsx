@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui";
 import { Product } from "@prisma/client";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { ChoosePizzaForm } from "@/components/shared";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface Props {
   product: Product;
@@ -26,7 +28,10 @@ export const ChooseProductModal: React.FC<Props> = ({ product, className }) => {
           className
         )}
       >
-        <DialogTitle>{product.name}</DialogTitle>
+        <VisuallyHidden>
+          <DialogTitle>{product.name}</DialogTitle>
+        </VisuallyHidden>
+        {/* <ChoosePizzaForm /> */}
       </DialogContent>
     </Dialog>
   );

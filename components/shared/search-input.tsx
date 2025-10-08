@@ -46,7 +46,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
   return (
     <>
       {focused && (
-        <div className="fixed top-0 right-0 bottom-0 left-0 bg-black/50 z-30" />
+        <div className="fixed top-0 right-0 bottom-0 left-0 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 bg-black/50 z-30" />
       )}
       <div
         ref={ref}
@@ -55,7 +55,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
           className
         )}
       >
-        <InputGroup className="bg-gray-100 relative z-31">
+        <InputGroup className="bg-gray-100 relative z-31 has-[[data-slot=input-group-control]:focus-visible]:border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/0 has-[[data-slot=input-group-control]:focus-visible]:ring-0">
           <InputGroupInput
             placeholder="Найти пиццу..."
             name="Search"
@@ -84,7 +84,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         {products.length > 0 && (
           <div
             className={cn(
-              "absolute left-[-8px] right-[-8px] bg-white rounded-xl py-4 pt-13 top-0 shadow-md transition-all duration-200 invisible opacity-0 z-30",
+              "absolute left-[-8px] right-[-8px] bg-white rounded-xl py-4 pt-13 top-11 shadow-md transition-all duration-200 invisible opacity-0 z-30",
               focused && "visible opacity-100 top-[-8px]"
             )}
           >

@@ -23,20 +23,19 @@ export const IngredientItem: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        "flex flex-col items-center p-1 rounded-md w-32 text-center relative cursor-pointer border border-transparent shadow-md bg-white",
-        { "border-primary": active },
+        "flex flex-col items-center rounded-md w-full text-center relative cursor-pointer shadow-md bg-white",
+        { "inset-ring-2 inset-ring-primary shadow-none": active },
         className
       )}
       onClick={onClick}
     >
-      {/* <div className="absolute top-1 right-1 p-0.5 bg-white rounded-sm">
-        {active ? (
-          <SquareCheckBig className="text-primary" />
-        ) : (
-          <SquareDashed className="text-secondary" />
-        )}
-      </div> */}
-      {active && <Check className="absolute top-1 right-1 text-primary" />}
+      {active && (
+        <Check
+          width={16}
+          height={16}
+          className="absolute top-2 right-2 text-primary"
+        />
+      )}
       <Image src={imageUrl} width={110} height={110} alt={name} />
       <span className="text-xs mb-1">{name}</span>
       <span className="font-bold">{price} ₽</span>

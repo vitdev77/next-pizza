@@ -29,7 +29,7 @@ export const PizzaImage: React.FC<Props> = ({ imageUrl, size, className }) => {
         )}
       />
 
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed border-2 rounded-full border-gray-200 w-[440px] h-[440px]" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed border-2 rounded-full border-gray-100 w-[440px] h-[440px]" />
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-dashed border-2 rounded-full border-gray-100 w-[360px] h-[360px]" />
     </div>
   );

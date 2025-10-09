@@ -7,16 +7,10 @@ import {
   Title,
 } from "@/shared/components/shared";
 import { Button } from "@/shared/components/ui";
-import {
-  mapPizzaType,
-  PizzaSize,
-  pizzaSizes,
-  PizzaType,
-  pizzaTypes,
-} from "@/shared/constants/pizza";
-import { useSet } from "react-use";
+import { PizzaSize, PizzaType, pizzaTypes } from "@/shared/constants/pizza";
 import { Ingredient, ProductItem } from "@prisma/client";
-import { calcTotalPizzaPrice, getAvailablePizzaSizes } from "@/shared/lib";
+import { getPizzaDetails } from "@/shared/lib";
+import { usePizzaOptions } from "@/shared/hooks";
 
 interface Props {
   name: string;
@@ -35,24 +29,23 @@ export const ChoosePizzaForm: React.FC<Props> = ({
   onClickAddCart,
   className,
 }) => {
-  const [size, setSize] = React.useState<PizzaSize>(20);
-  const [type, setType] = React.useState<PizzaType>(1);
-  const [selectedIngredients, { toggle: addIngredient }] = useSet(
-    new Set<number>([])
-  );
+  const {
+    size,
+    type,
+    selectedIngredients,
+    availableSizes,
+    setSize,
+    setType,
+    addIngredient,
+  } = usePizzaOptions(items);
 
-  const totalPrice = calcTotalPizzaPrice(
+  const { totalPrice, textDetails } = getPizzaDetails(
     type,
     size,
     items,
     ingredients,
     selectedIngredients
   );
-  const textDetails = `${size} см, ${mapPizzaType[type]} пицца`;
-
-  const availablePizzaSizes = getAvailablePizzaSizes(type, items);
-
-  /**/
 
   const handleClickAdd = () => {
     onClickAddCart?.();
@@ -71,7 +64,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
 
         <div className="flex flex-col gap-1 my-5">
           <GroupVariants
-            items={availablePizzaSizes}
+            items={availableSizes}
             value={String(size)}
             onClick={(value) => setSize(Number(value) as PizzaSize)}
           />
@@ -82,7 +75,7 @@ export const ChoosePizzaForm: React.FC<Props> = ({
           />
         </div>
 
-        <div className="bg-[#F3F3F7] p-5 rounded-md h-[412px] overflow-auto scrollbar">
+        <div className="bg-[#F3F3F7] p-5 rounded-md h-[392px] overflow-auto scrollbar">
           <div className="grid grid-cols-3 gap-3">
             {ingredients.map((ingredient) => (
               <IngredientItem

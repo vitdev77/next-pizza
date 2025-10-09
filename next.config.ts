@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cdn.dodostatic.net",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
         hostname: "cdn.dribbble.com",
         pathname: "**",
       },

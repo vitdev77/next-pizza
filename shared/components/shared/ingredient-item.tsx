@@ -24,16 +24,16 @@ export const IngredientItem: React.FC<Props> = ({
     <div
       className={cn(
         "flex flex-col items-center rounded-md w-full text-center relative cursor-pointer shadow-md bg-white",
-        { "inset-ring-2 inset-ring-primary shadow-none": active },
+        { "inset-ring-2 inset-ring-primary/50 shadow-none": active },
         className
       )}
       onClick={onClick}
     >
       {active && (
         <Check
-          width={16}
-          height={16}
-          className="absolute top-2 right-2 text-primary"
+          width={20}
+          height={20}
+          className="absolute top-1.5 right-1.5 text-primary"
         />
       )}
       <Image src={imageUrl} width={110} height={110} alt={name} />

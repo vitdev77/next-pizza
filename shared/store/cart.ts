@@ -1,16 +1,6 @@
 import { create } from "zustand";
 import { Api } from "../services/api-client";
-
-export type ICartItem = {
-  id: number;
-  quantity: number;
-  name: string;
-  imageUrl: string;
-  price: number;
-  pizzaSize?: number | null;
-  type?: number | null;
-  ingredients: Array<{ name: string; price: number }>;
-};
+import { getCartDetails } from "../lib";
 
 export interface CartState {
   loading: boolean;
@@ -52,6 +42,8 @@ export const useCartStore = create<CartState>((set, get) => ({
   },
 
   removeCartItem: async (id: number) => {},
+
   updateItemQuantity: async (id: number, quantity: number) => {},
+
   addCartItem: async (values: any) => {},
 }));

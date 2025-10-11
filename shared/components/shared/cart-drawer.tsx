@@ -26,22 +26,34 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({
   className,
 }) => {
   // Эта запись (как у автора на 11:47 минуте) выдает бесконечный цикл:
-  // const [fetchCartItems, totalAmount, items] = useCartStore((state) => [
+  // const [fetchCartItems, totalAmount, items, updateItemQuantity] = useCartStore((state) => [
   //   state.fetchCartItems,
   //   state.totalAmount,
   //   state.items,
+  //   state.updateItemQuantity,
   // ]);
 
   // Без ошибок будет такая запись:
-  const { fetchCartItems, totalAmount, items } = useCartStore((state) => state);
+  const { fetchCartItems, totalAmount, items, updateItemQuantity } =
+    useCartStore((state) => state);
   // Можно и так (2-й вариант):
   // const fetchCartItems = useCartStore((state) => state.fetchCartItems);
   // const totalAmount = useCartStore((state) => state.totalAmount);
   // const items = useCartStore((state) => state.items);
+  // const updateItemQuantity = useCartStore((state) => state.updateItemQuantity);
 
   React.useEffect(() => {
     fetchCartItems();
   }, []);
+
+  const onClickCountButton = (
+    id: number,
+    quantity: number,
+    type: "plus" | "minus"
+  ) => {
+    const newQuantity = type === "plus" ? quantity + 1 : quantity - 1;
+    updateItemQuantity(id, newQuantity);
+  };
 
   return (
     <Sheet>
@@ -71,6 +83,9 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({
                 name={item.name}
                 price={item.price}
                 quantity={item.quantity}
+                onClickCountButton={(type) =>
+                  onClickCountButton(item.id, item.quantity, type)
+                }
               />
             </div>
           ))}

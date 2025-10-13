@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
   Container,
   Filters,
@@ -33,7 +34,9 @@ export default async function Home() {
         <div className="flex gap-[80px]">
           {/* Фильтрация */}
           <div className="w-[250px]">
-            <Filters />
+            <React.Suspense>
+              <Filters />
+            </React.Suspense>
           </div>
 
           {/* Список товаров */}

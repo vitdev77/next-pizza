@@ -37,6 +37,7 @@ const Header: React.FC<Props> = ({ className }) => {
             <User size={16} />
             Войти
           </Button>
+
           <CartButton />
         </div>
       </Container>

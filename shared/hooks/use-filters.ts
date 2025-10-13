@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import { useSearchParams } from "next/navigation";
 import { useSet } from "react-use";
 
@@ -69,14 +69,17 @@ export const useFilters = (): ReturnProps => {
     }));
   };
 
-  return {
-    sizes,
-    pizzaTypes,
-    selectedIngredients,
-    prices,
-    setPrices: updatePrice,
-    setPizzaTypes: togglePizzaTypes,
-    setSizes: toggleSizes,
-    setSelectedIngredients: toggleIngredients,
-  };
+  return React.useMemo(
+    () => ({
+      sizes,
+      pizzaTypes,
+      selectedIngredients,
+      prices,
+      setPrices: updatePrice,
+      setPizzaTypes: togglePizzaTypes,
+      setSizes: toggleSizes,
+      setSelectedIngredients: toggleIngredients,
+    }),
+    [sizes, pizzaTypes, selectedIngredients, prices]
+  );
 };

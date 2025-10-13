@@ -15,12 +15,12 @@ const DEFAULT_MAX_PRICE = 1000;
 
 export const findPizzas = async (params: GetSearchParams) => {
   const { sizes, pizzaTypes, ingredients, priceFrom, priceTo } = await params;
-  const sizes_ = sizes?.split(",").map(Number);
-  const pizzaTypes_ = pizzaTypes?.split(",").map(Number);
+  const _sizes = sizes?.split(",").map(Number);
+  const _pizzaTypes = pizzaTypes?.split(",").map(Number);
   const ingredientsIdArr = ingredients?.split(",").map(Number);
 
-  const minPrice_ = Number(priceFrom) || DEFAULT_MIN_PRICE;
-  const maxPrice_ = Number(priceTo) || DEFAULT_MAX_PRICE;
+  const _minPrice = Number(priceFrom) || DEFAULT_MIN_PRICE;
+  const _maxPrice = Number(priceTo) || DEFAULT_MAX_PRICE;
 
   const categories = await prisma.category.findMany({
     include: {
@@ -41,14 +41,14 @@ export const findPizzas = async (params: GetSearchParams) => {
           items: {
             some: {
               size: {
-                in: sizes_,
+                in: _sizes,
               },
               pizzaType: {
-                in: pizzaTypes_,
+                in: _pizzaTypes,
               },
               price: {
-                gte: minPrice_, // >=
-                lte: maxPrice_, // <=
+                gte: _minPrice, // >=
+                lte: _maxPrice, // <=
               },
             },
           },
@@ -58,8 +58,8 @@ export const findPizzas = async (params: GetSearchParams) => {
           items: {
             where: {
               price: {
-                gte: minPrice_,
-                lte: maxPrice_,
+                gte: _minPrice,
+                lte: _maxPrice,
               },
             },
             orderBy: {

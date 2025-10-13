@@ -15,6 +15,7 @@ export { Header } from "./header";
 export { IngredientItem } from "./ingredient-item";
 export * from "./modals";
 export { ProductCard } from "./product-card";
+export { ProductForm } from "./product-form";
 export { PizzaImage } from "./pizza-image";
 export { ProductsGroupList } from "./products-group-list";
 export { RangeSlider } from "./range-slider";

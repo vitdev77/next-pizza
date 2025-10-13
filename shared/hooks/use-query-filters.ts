@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import { Filters } from "./use-filters";
 import qs from "qs";
 import { useRouter } from "next/navigation";
@@ -26,6 +26,5 @@ export const useQueryFilters = (filters: Filters) => {
     filters.prices,
     filters.selectedIngredients,
     filters.sizes,
-    router,
   ]);
 };

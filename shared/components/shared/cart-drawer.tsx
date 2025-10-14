@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { CartDrawerItem } from "./cart-drawer-item";
-import { getCartItemDetails } from "@/shared/lib";
+import { declOfNum, getCartItemDetails } from "@/shared/lib";
 import { useCartStore } from "@/shared/store";
 import { PizzaSize, PizzaType } from "@/shared/constants/pizza";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
@@ -65,7 +65,10 @@ export const CartDrawer: React.FC<React.PropsWithChildren<Props>> = ({
             <SheetHeader>
               <SheetTitle>
                 В корзине{" "}
-                <span className="font-bold">{items.length} товара</span>
+                <span className="font-bold">
+                  {items.length}{" "}
+                  {declOfNum(items.length, ["товар", "товара", "товаров"])}
+                </span>
               </SheetTitle>
             </SheetHeader>
           ) : (

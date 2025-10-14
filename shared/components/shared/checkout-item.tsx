@@ -47,7 +47,7 @@ export const CheckoutItem: React.FC<Props> = ({
           value={quantity}
         />
         <Button
-          size={"sm"}
+          size={"icon-sm"}
           variant={"link"}
           loading={disabled}
           onClick={onClickRemove}

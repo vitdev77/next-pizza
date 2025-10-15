@@ -1,7 +1,7 @@
 import * as React from "react";
 import { X } from "lucide-react";
-import { cn } from "@/shared/lib/utils";
-import { Button } from "../ui";
+import { Button } from "@/shared/components";
+import { cn } from "@/shared/lib";
 
 interface Props {
   onClick?: VoidFunction;

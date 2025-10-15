@@ -1,8 +1,7 @@
 import * as React from "react";
-import { CheckoutItemDetails, WhiteBlock } from ".";
 import { ArrowRight, Package, Percent, Truck } from "lucide-react";
-import { Button } from "../ui";
-import { cn } from "@/shared/lib/utils";
+import { Button, CheckoutItemDetails, WhiteBlock } from "@/shared/components";
+import { cn } from "@/shared/lib";
 
 interface Props {
   totalAmount: number;

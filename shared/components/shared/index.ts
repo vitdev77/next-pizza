@@ -13,7 +13,6 @@ export { ClearButton } from "./clear-button";
 export { Container } from "./container";
 export { CountButton } from "./count-button";
 export { CountIconButton } from "./count-icon-button";
-export { ErrorText } from "./error-text";
 export { Filters } from "./filters";
 export { FilterCheckbox } from "./filter-checkbox";
 export { GroupVariants } from "./group-variants";

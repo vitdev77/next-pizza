@@ -1,6 +1,5 @@
 import * as React from "react";
-import { FormInput, WhiteBlock } from "..";
-import { FieldGroup } from "../../ui";
+import { FormInput, WhiteBlock, FieldGroup } from "@/shared/components";
 
 interface Props {
   className?: string;

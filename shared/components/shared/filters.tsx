@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import {
+  Input,
+  Label,
   Title,
   CheckboxFiltersGroup,
   RangeSlider,
-} from "@/shared/components/shared";
-import { Input, Label } from "@/shared/components/ui";
+} from "@/shared/components";
 import { useQueryFilters, useIngredients, useFilters } from "@/shared/hooks";
 
 interface Props {

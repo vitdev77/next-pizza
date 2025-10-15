@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "@/shared/lib/utils";
+import { cn } from "@/shared/lib";
 
 interface Props {
   src: string;

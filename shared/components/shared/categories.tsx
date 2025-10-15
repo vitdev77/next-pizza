@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/shared/lib/utils";
-import { useCategoryStore } from "@/shared/store/category";
 import Link from "next/link";
 import { Category } from "@prisma/client";
+import { cn } from "@/shared/lib";
+import { useCategoryStore } from "@/shared/store";
 
 interface Props {
   items: Category[];

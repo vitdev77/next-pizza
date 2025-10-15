@@ -6,20 +6,20 @@ import {
   Field,
   FieldError,
   FieldLabel,
-  Input,
+  Textarea,
   ClearButton,
   RequiredSymbol,
 } from "@/shared/components";
 import { cn } from "@/shared/lib";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
   label?: string;
   required?: boolean;
   className?: string;
 }
 
-export const FormInput: React.FC<Props> = ({
+export const FormTextarea: React.FC<Props> = ({
   name,
   label,
   required,
@@ -52,7 +52,7 @@ export const FormInput: React.FC<Props> = ({
         </FieldLabel>
       )}
       <div className="relative">
-        <Input id={name} {...register(name)} {...props} />
+        <Textarea id={name} {...register(name)} {...props} />
         {value && <ClearButton onClick={onClickClear} />}
       </div>
       {errorText && <FieldError>{errorText}</FieldError>}

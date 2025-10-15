@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { Button, Input, Skeleton } from "@/shared/components";
 import {
   FilterCheckbox,
   FilterCheckboxProps,
 } from "@/shared/components/shared/filter-checkbox";
-import { Button, Input, Skeleton } from "@/shared/components/ui";
-import { ChevronDown, ChevronUp } from "lucide-react";
 
 type Item = FilterCheckboxProps;
 

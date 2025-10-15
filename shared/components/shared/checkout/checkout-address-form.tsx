@@ -1,6 +1,12 @@
 import * as React from "react";
-import { WhiteBlock } from "..";
-import { Field, FieldGroup, FieldLabel, Input, Textarea } from "../../ui";
+import {
+  WhiteBlock,
+  Field,
+  FieldGroup,
+  FieldLabel,
+  Input,
+  Textarea,
+} from "@/shared/components";
 
 interface Props {
   className?: string;

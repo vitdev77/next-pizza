@@ -1,4 +1,4 @@
-import { calcCartItemTotalPrice } from ".";
+import { calcCartItemTotalPrice } from "@/shared/lib";
 import { CartDTO } from "../services/dto/cart.dto";
 
 export type CartStateItem = {

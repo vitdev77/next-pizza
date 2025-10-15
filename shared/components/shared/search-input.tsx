@@ -1,18 +1,18 @@
 "use client";
 
-import { cn } from "@/shared/lib/utils";
-import { Api } from "@/shared/services/api-client";
-import { Product } from "@prisma/client";
-import { Search, SearchIcon } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import * as React from "react";
 import { useClickAway, useDebounce } from "react-use";
+import { Product } from "@prisma/client";
+import { SearchIcon } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/shared/components/ui";
+} from "@/shared/components";
+import { cn } from "@/shared/lib";
+import { Api } from "@/shared/services/api-client";
 
 interface Props {
   className?: string;
@@ -72,19 +72,6 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
             <SearchIcon />
           </InputGroupAddon>
         </InputGroup>
-        {/* <Search
-          size={20}
-          className="absolute top-1/2 translate-y-[-50%] left-3 text-gray-400"
-        /> */}
-        {/* <input
-          placeholder="Найти пиццу..."
-          name="Search"
-          type="text"
-          className="w-full rounded-xl outline-none bg-gray-100 pl-11"
-          onFocus={() => setFocused(true)}
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        /> */}
         {products.length > 0 && (
           <div
             className={cn(

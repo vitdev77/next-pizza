@@ -1,10 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/shared/components/ui";
-import { cn } from "@/shared/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  ProductForm,
+} from "@/shared/components";
+import { cn } from "@/shared/lib";
 import { useRouter } from "next/navigation";
-import { ProductForm } from "@/shared/components/shared";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { ProductWithRelations } from "@/@types/prisma";
 

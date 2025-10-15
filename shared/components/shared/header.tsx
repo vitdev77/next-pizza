@@ -1,10 +1,14 @@
-import { cn } from "@/shared/lib/utils";
 import * as React from "react";
-import Image from "next/image";
-import { Button } from "@/shared/components/ui";
-import { CartButton, Container, SearchInput } from "@/shared/components/shared";
 import { User } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import {
+  Button,
+  CartButton,
+  Container,
+  SearchInput,
+} from "@/shared/components";
+import { cn } from "@/shared/lib";
 
 interface Props {
   hasSearch?: boolean;

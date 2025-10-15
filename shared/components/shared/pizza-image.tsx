@@ -1,6 +1,6 @@
-import React from "react";
-import { cn } from "@/shared/lib/utils";
+import * as React from "react";
 import Image from "next/image";
+import { cn } from "@/shared/lib";
 
 interface Props {
   className?: string;
@@ -18,7 +18,7 @@ export const PizzaImage: React.FC<Props> = ({ imageUrl, size, className }) => {
     >
       <img
         src={imageUrl}
-        alt="logo"
+        alt="Image"
         className={cn(
           "relative left-2 top-2 transition-all duration-300 z-10",
           {

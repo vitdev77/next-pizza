@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Title } from "@/shared/components/shared";
-import { cn } from "@/shared/lib/utils";
+import { Title } from "@/shared/components";
+import { cn } from "@/shared/lib";
 
 interface Props {
   title?: string;

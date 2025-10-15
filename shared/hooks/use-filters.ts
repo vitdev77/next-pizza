@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { useSearchParams } from "next/navigation";
 import { useSet } from "react-use";
+import { useSearchParams } from "next/navigation";
 
 interface PriceProps {
   priceFrom?: number;

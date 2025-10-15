@@ -1,16 +1,15 @@
 import * as React from "react";
-import { cn } from "@/shared/lib/utils";
+import { Ingredient, ProductItem } from "@prisma/client";
 import {
+  Button,
   GroupVariants,
   IngredientItem,
   PizzaImage,
   Title,
-} from "@/shared/components/shared";
-import { Button } from "@/shared/components/ui";
-import { PizzaSize, PizzaType, pizzaTypes } from "@/shared/constants/pizza";
-import { Ingredient, ProductItem } from "@prisma/client";
-import { getPizzaDetails } from "@/shared/lib";
+} from "@/shared/components";
+import { PizzaSize, PizzaType, pizzaTypes } from "@/shared/constants";
 import { usePizzaOptions } from "@/shared/hooks";
+import { cn, getPizzaDetails } from "@/shared/lib";
 
 interface Props {
   name: string;

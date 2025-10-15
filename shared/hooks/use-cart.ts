@@ -1,7 +1,7 @@
 import * as React from "react";
-import { CreateCartItemValues } from "../services/dto/cart.dto";
-import { CartStateItem } from "../lib/get-cart-details";
-import { useCartStore } from "../store";
+import { CartStateItem } from "@/shared/lib/get-cart-details";
+import { CreateCartItemValues } from "@/shared/services/dto/cart.dto";
+import { useCartStore } from "@/shared/store";
 
 type ReturnProps = {
   totalAmount: number;

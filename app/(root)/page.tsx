@@ -5,8 +5,7 @@ import {
   ProductsGroupList,
   Title,
   TopBar,
-} from "@/shared/components/shared";
-import { prisma } from "@/prisma/prisma-client";
+} from "@/shared/components";
 import { findPizzas, GetSearchParams } from "@/shared/lib/find-pizzas";
 
 export default async function Home({

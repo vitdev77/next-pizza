@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -17,28 +18,38 @@ import { createOrder } from "@/app/actions";
 import toast from "react-hot-toast";
 
 export default function CheckoutPage() {
+  const [submitting, setSubmitting] = React.useState(false);
+
   const { totalAmount, items, updateItemQuantity, removeCartItem, loading } =
     useCart();
 
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      address: "",
-      comment: "",
+      firstName: "Ivan",
+      lastName: "Ivanov",
+      email: "ivan@test.ru",
+      phone: "1234567890",
+      address: "Moscow",
+      comment: "Lorem",
     },
   });
 
   const onSubmit = async (data: CheckoutFormValues) => {
     try {
-      const url = await createOrder(data);
+      setSubmitting(true);
 
-      toast.success("Заказ успешно оформлен!", { icon: "✅" });
+      // const url = await createOrder(data);
+      const url: any = await createOrder(data);
+
+      toast.success("Супер! \nПочти все готово...");
+      if (url) {
+        setTimeout(() => (location.href = url), 1000);
+      }
     } catch (err) {
-      toast.error("Не удалось создать заказ", { icon: "❌" });
+      console.error(err);
+      setSubmitting(false);
+      toast.error("Не удалось создать заказ");
     }
   };
 
@@ -70,16 +81,21 @@ export default function CheckoutPage() {
                 loading={loading}
               />
               <CheckoutPersonalForm
-                className={loading ? "opacity-40 pointer-events-none" : ""}
+                className={loading ? "pointer-events-none" : ""}
+                loading={loading}
               />
               <CheckoutAddressForm
-                className={loading ? "opacity-40 pointer-events-none" : ""}
+                className={loading ? "pointer-events-none" : ""}
+                loading={loading}
               />
             </div>
 
             {/* Правая часть */}
             <div className="w-[450px]">
-              <CheckoutSidebar totalAmount={totalAmount} loading={loading} />
+              <CheckoutSidebar
+                totalAmount={totalAmount}
+                loading={loading || submitting}
+              />
             </div>
           </div>
         </form>

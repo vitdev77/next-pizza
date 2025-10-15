@@ -1,5 +1,3 @@
-// "use client";
-
 import * as React from "react";
 import {
   WhiteBlock,
@@ -9,16 +7,16 @@ import {
   FormInput,
   FormTextarea,
 } from "@/shared/components";
-// import { AddressInput } from "../address-input";
-// import { Controller, useFormContext } from "react-hook-form";
 
 interface Props {
+  loading?: boolean;
   className?: string;
 }
 
-export const CheckoutAddressForm: React.FC<Props> = ({ className }) => {
-  // const { control } = useFormContext();
-
+export const CheckoutAddressForm: React.FC<Props> = ({
+  loading,
+  className,
+}) => {
   return (
     <WhiteBlock title="3. Адрес доставки" className={className}>
       <FieldGroup className="flex flex-col gap-5">
@@ -27,28 +25,14 @@ export const CheckoutAddressForm: React.FC<Props> = ({ className }) => {
           label="Адрес"
           placeholder="Укажите адрес доставки"
           required
+          disabled={loading}
         />
-
-        {/* <Controller
-          control={control}
-          name="address"
-          render={({ field, fieldState }) => (
-            <>
-              <AddressInput onChange={field.onChange} />
-              {fieldState.error?.message && (
-                <p className="text-red-500 text-sm">
-                  {fieldState.error.message}
-                </p>
-              )}
-            </>
-          )}
-        /> */}
-
         <FormTextarea
           name="comment"
           label="Комментарий"
           rows={5}
           placeholder="Здесь Вы можете оставить свой комментарий к заказу"
+          disabled={loading}
         />
       </FieldGroup>
     </WhiteBlock>

@@ -1,44 +1,55 @@
+// "use client";
+
 import * as React from "react";
 import {
   WhiteBlock,
   Field,
   FieldGroup,
   FieldLabel,
-  Input,
-  Textarea,
+  FormInput,
+  FormTextarea,
 } from "@/shared/components";
+// import { AddressInput } from "../address-input";
+// import { Controller, useFormContext } from "react-hook-form";
 
 interface Props {
   className?: string;
 }
 
 export const CheckoutAddressForm: React.FC<Props> = ({ className }) => {
+  // const { control } = useFormContext();
+
   return (
     <WhiteBlock title="3. Адрес доставки" className={className}>
       <FieldGroup className="flex flex-col gap-5">
-        <Field className="gap-2">
-          <FieldLabel htmlFor="address" className="font-bold">
-            Адрес
-          </FieldLabel>
-          <Input
-            id="address"
-            name="address"
-            className="text-base"
-            placeholder="Укажите адрес доставки"
-          />
-        </Field>
-        <Field className="gap-2">
-          <FieldLabel htmlFor="comment" className="font-bold">
-            Комментарий
-          </FieldLabel>
-          <Textarea
-            id="comment"
-            name="comment"
-            className="text-base"
-            rows={5}
-            placeholder="Здесь Вы можете оставить свой комментарий к заказу"
-          />
-        </Field>
+        <FormInput
+          name="address"
+          label="Адрес"
+          placeholder="Укажите адрес доставки"
+          required
+        />
+
+        {/* <Controller
+          control={control}
+          name="address"
+          render={({ field, fieldState }) => (
+            <>
+              <AddressInput onChange={field.onChange} />
+              {fieldState.error?.message && (
+                <p className="text-red-500 text-sm">
+                  {fieldState.error.message}
+                </p>
+              )}
+            </>
+          )}
+        /> */}
+
+        <FormTextarea
+          name="comment"
+          label="Комментарий"
+          rows={5}
+          placeholder="Здесь Вы можете оставить свой комментарий к заказу"
+        />
       </FieldGroup>
     </WhiteBlock>
   );

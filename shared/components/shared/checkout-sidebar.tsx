@@ -1,10 +1,16 @@
 import * as React from "react";
 import { ArrowRight, Package, Percent, Truck } from "lucide-react";
-import { Button, CheckoutItemDetails, WhiteBlock } from "@/shared/components";
+import {
+  Button,
+  CheckoutItemDetails,
+  Skeleton,
+  WhiteBlock,
+} from "@/shared/components";
 import { cn } from "@/shared/lib";
 
 interface Props {
   totalAmount: number;
+  loading?: boolean;
   className?: string;
 }
 
@@ -13,6 +19,7 @@ const DELIVERY_PRICE = 250;
 
 export const CheckoutSidebar: React.FC<Props> = ({
   totalAmount,
+  loading,
   className,
 }) => {
   const vatPrice = (totalAmount * VAT) / 100;
@@ -21,7 +28,11 @@ export const CheckoutSidebar: React.FC<Props> = ({
     <WhiteBlock className={cn("p-6 sticky top-4", className)}>
       <div className="flex flex-col gap-1">
         <span className="text-xl">Итого:</span>
-        <span className="text-[34px] font-extrabold">{totalPrice} ₽</span>
+        {loading ? (
+          <Skeleton className="w-1/2 h-[47px] mt-1 animate-pulse" />
+        ) : (
+          <span className="text-[34px] font-extrabold">{totalPrice} ₽</span>
+        )}
       </div>
 
       <CheckoutItemDetails
@@ -31,7 +42,7 @@ export const CheckoutSidebar: React.FC<Props> = ({
             Стоимость корзины:
           </div>
         }
-        value={`${totalAmount} ₽`}
+        value={loading ? <Skeleton className="h-7 w-20" /> : `${totalAmount} ₽`}
       />
       <CheckoutItemDetails
         title={
@@ -40,7 +51,7 @@ export const CheckoutSidebar: React.FC<Props> = ({
             Налоги:
           </div>
         }
-        value={`${vatPrice} ₽`}
+        value={loading ? <Skeleton className="h-7 w-15" /> : `${vatPrice} ₽`}
       />
       <CheckoutItemDetails
         title={
@@ -49,13 +60,20 @@ export const CheckoutSidebar: React.FC<Props> = ({
             Доставка:
           </div>
         }
-        value={`${DELIVERY_PRICE} ₽`}
+        value={
+          loading ? <Skeleton className="h-7 w-18" /> : `${DELIVERY_PRICE} ₽`
+        }
       />
 
       <Button
         type="submit"
         size={"lg"}
-        className="w-full h-14 text-base font-bold mt-6"
+        disabled={loading}
+        className={cn(
+          "w-full h-14 text-base font-bold mt-6",
+          { "pointer-events-none": loading },
+          className
+        )}
       >
         Перейти к оплате <ArrowRight width={20} height={20} />
       </Button>

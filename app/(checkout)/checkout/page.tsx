@@ -13,9 +13,12 @@ import {
 } from "@/shared/components";
 import { checkoutFormSchema, CheckoutFormValues } from "@/shared/constants";
 import { useCart } from "@/shared/hooks";
+import { createOrder } from "@/app/actions";
+import toast from "react-hot-toast";
 
 export default function CheckoutPage() {
-  const { totalAmount, items, updateItemQuantity, removeCartItem } = useCart();
+  const { totalAmount, items, updateItemQuantity, removeCartItem, loading } =
+    useCart();
 
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
@@ -29,8 +32,14 @@ export default function CheckoutPage() {
     },
   });
 
-  const onSubmit = (data: CheckoutFormValues) => {
-    console.log(data);
+  const onSubmit = async (data: CheckoutFormValues) => {
+    try {
+      const url = await createOrder(data);
+
+      toast.success("Заказ успешно оформлен!", { icon: "✅" });
+    } catch (err) {
+      toast.error("Не удалось создать заказ", { icon: "❌" });
+    }
   };
 
   const onClickCountButton = (
@@ -58,16 +67,19 @@ export default function CheckoutPage() {
                 items={items}
                 onClickCountButton={onClickCountButton}
                 removeCartItem={removeCartItem}
+                loading={loading}
               />
-
-              <CheckoutPersonalForm />
-
-              <CheckoutAddressForm />
+              <CheckoutPersonalForm
+                className={loading ? "opacity-40 pointer-events-none" : ""}
+              />
+              <CheckoutAddressForm
+                className={loading ? "opacity-40 pointer-events-none" : ""}
+              />
             </div>
 
             {/* Правая часть */}
             <div className="w-[450px]">
-              <CheckoutSidebar totalAmount={totalAmount} />
+              <CheckoutSidebar totalAmount={totalAmount} loading={loading} />
             </div>
           </div>
         </form>

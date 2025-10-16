@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { FormProvider, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import * as React from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import {
   CheckoutAddressForm,
@@ -11,11 +11,11 @@ import {
   CheckoutSidebar,
   Container,
   Title,
-} from "@/shared/components";
-import { checkoutFormSchema, CheckoutFormValues } from "@/shared/constants";
-import { useCart } from "@/shared/hooks";
-import { createOrder } from "@/app/actions";
-import toast from "react-hot-toast";
+} from '@/shared/components';
+import { checkoutFormSchema, CheckoutFormValues } from '@/shared/constants';
+import { useCart } from '@/shared/hooks';
+import { createOrder } from '@/app/actions';
+import toast from 'react-hot-toast';
 
 export default function CheckoutPage() {
   const [submitting, setSubmitting] = React.useState(false);
@@ -26,12 +26,12 @@ export default function CheckoutPage() {
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
-      firstName: "Ivan",
-      lastName: "Ivanov",
-      email: "ivan@test.ru",
-      phone: "1234567890",
-      address: "Moscow",
-      comment: "Lorem",
+      firstName: 'Ivan',
+      lastName: 'Ivanov',
+      email: 'ivan@test.ru',
+      phone: '1234567890',
+      address: 'Moscow',
+      comment: 'Lorem',
     },
   });
 
@@ -39,26 +39,25 @@ export default function CheckoutPage() {
     try {
       setSubmitting(true);
 
-      // const url = await createOrder(data);
-      const url: any = await createOrder(data);
+      const url = await createOrder(data);
 
-      toast.success("Супер! \nПочти все готово...");
+      toast.success('Супер! \nПочти все готово...');
       if (url) {
         setTimeout(() => (location.href = url), 1000);
       }
     } catch (err) {
       console.error(err);
       setSubmitting(false);
-      toast.error("Не удалось создать заказ");
+      toast.error('Не удалось создать заказ');
     }
   };
 
   const onClickCountButton = (
     id: number,
     quantity: number,
-    type: "plus" | "minus"
+    type: 'plus' | 'minus'
   ) => {
-    const newQuantity = type === "plus" ? quantity + 1 : quantity - 1;
+    const newQuantity = type === 'plus' ? quantity + 1 : quantity - 1;
     updateItemQuantity(id, newQuantity);
   };
 
@@ -81,11 +80,11 @@ export default function CheckoutPage() {
                 loading={loading}
               />
               <CheckoutPersonalForm
-                className={loading ? "pointer-events-none" : ""}
+                className={loading ? 'pointer-events-none' : ''}
                 loading={loading}
               />
               <CheckoutAddressForm
-                className={loading ? "pointer-events-none" : ""}
+                className={loading ? 'pointer-events-none' : ''}
                 loading={loading}
               />
             </div>

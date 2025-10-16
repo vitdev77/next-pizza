@@ -14,7 +14,9 @@ export function OrderSuccessTemplate({
     <div>
       <h1>Спасибо за покупку!</h1>
 
-      <p>Ваш заказ #${orderId} успешно оплачен. Список товаровЖ</p>
+      <p>Ваш заказ #${orderId} успешно оплачен. Список товаров:</p>
+
+      <hr />
 
       <ul>
         {items.map((item) => (

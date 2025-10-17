@@ -57,7 +57,9 @@ export async function createOrder(data: CheckoutFormValues) {
         comment: data.comment,
         totalAmount: userCart.totalAmount,
         status: OrderStatus.PENDING,
-        items: JSON.stringify(userCart.items),
+        // items: JSON.stringify(userCart.items),
+        // items: JSON.parse(JSON.stringify(userCart.items)),
+        items: userCart.items,
       },
     });
 

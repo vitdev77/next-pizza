@@ -32,13 +32,16 @@ export async function POST(req: NextRequest) {
     });
 
     const items = order?.items as unknown as CartItemDTO[];
+    // const items = JSON.parse(order?.items as string) as CartItemDTO[];
 
     if (isSucceeded) {
       await sendEmail(
         order.email,
-        'Next Pizza / Ваш заказ оформлен',
+        'Next Pizza | Ваш заказ оформлен',
         OrderSuccessTemplate({ orderId: order.id, items })
       );
+
+      return NextResponse.json('Success');
     } else {
       // TODO: Письмо о неуспешной оплате
     }

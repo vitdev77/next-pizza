@@ -1,7 +1,7 @@
-import * as React from "react";
-import { CartStateItem } from "@/shared/lib/get-cart-details";
-import { CreateCartItemValues } from "@/shared/services/dto/cart.dto";
-import { useCartStore } from "@/shared/store";
+import * as React from 'react';
+import { CartStateItem } from '@/shared/lib/get-cart-details';
+import { CreateCartItemValues } from '@/shared/services/dto/cart.dto';
+import { useCartStore } from '@/shared/store';
 
 type ReturnProps = {
   totalAmount: number;
@@ -36,7 +36,7 @@ export const useCart = (): ReturnProps => {
   //   addCartItem,
   // };
 
-  // Более оптимизированный вариант записи выше
+  // Более оптимизированный вариант, чем запись выше
   const cartState = useCartStore((state) => state);
 
   React.useEffect(() => {

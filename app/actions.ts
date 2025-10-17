@@ -47,7 +47,7 @@ export async function createOrder(data: CheckoutFormValues) {
     }
 
     /* Создаем заказ */
-    const order = await prisma.cart.create({
+    const order = await prisma.order.create({
       data: {
         token: cartToken,
         fullName: data.firstName + ' ' + data.lastName,

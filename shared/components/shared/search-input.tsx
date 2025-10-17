@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { useClickAway, useDebounce } from "react-use";
-import { Product } from "@prisma/client";
-import { SearchIcon } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import * as React from 'react';
+import { useClickAway, useDebounce } from 'react-use';
+import { Product } from '@prisma/client';
+import { SearchIcon } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/shared/components";
-import { cn } from "@/shared/lib";
-import { Api } from "@/shared/services/api-client";
+} from '@/shared/components';
+import { cn } from '@/shared/lib';
+import { Api } from '@/shared/services/api-client';
 
 interface Props {
   className?: string;
 }
 
 export const SearchInput: React.FC<Props> = ({ className }) => {
-  const [searchQuery, setSearchQuery] = React.useState("");
+  const [searchQuery, setSearchQuery] = React.useState('');
   const [focused, setFocused] = React.useState(false);
   const [products, setProducts] = React.useState<Product[]>([]);
 
@@ -42,7 +42,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
   );
 
   const onClickItem = () => {
-    setSearchQuery("");
+    setSearchQuery('');
     setProducts([]);
     setFocused(false);
   };
@@ -55,11 +55,11 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
       <div
         ref={ref}
         className={cn(
-          "flex flex-1 rounded-xl justify-between relative h-9 z-30",
+          'flex flex-1 rounded-xl justify-between relative h-9 z-30',
           className
         )}
       >
-        <InputGroup className="bg-gray-100 relative z-31 has-[[data-slot=input-group-control]:focus-visible]:border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/0 has-[[data-slot=input-group-control]:focus-visible]:ring-0">
+        <InputGroup className="bg-gray-100 border-gray-100 relative z-31 has-[[data-slot=input-group-control]:focus-visible]:border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/0 has-[[data-slot=input-group-control]:focus-visible]:ring-0">
           <InputGroupInput
             placeholder="Найти пиццу..."
             name="Search"
@@ -75,8 +75,8 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         {products.length > 0 && (
           <div
             className={cn(
-              "absolute left-[-8px] right-[-8px] bg-white rounded-xl py-4 pt-13 top-0 shadow-md transition-all duration-100 invisible opacity-0 z-30",
-              focused && "visible opacity-100 top-[-8px]"
+              'absolute left-[-8px] right-[-8px] bg-white rounded-xl py-4 pt-13 top-0 shadow-md transition-all duration-100 invisible opacity-0 z-30',
+              focused && 'visible opacity-100 top-[-8px]'
             )}
           >
             {products.map((product) => (

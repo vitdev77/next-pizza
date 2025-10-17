@@ -1,14 +1,18 @@
-import * as React from "react";
-import { User } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+
+import * as React from 'react';
+import { User } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter, useSearchParams } from 'next/navigation';
 import {
   Button,
   CartButton,
   Container,
   SearchInput,
-} from "@/shared/components";
-import { cn } from "@/shared/lib";
+} from '@/shared/components';
+import { cn } from '@/shared/lib';
+import toast from 'react-hot-toast';
 
 interface Props {
   hasSearch?: boolean;
@@ -21,13 +25,26 @@ const Header: React.FC<Props> = ({
   hasCart = true,
   className,
 }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  React.useEffect(() => {
+    if (searchParams.has('paid')) {
+      toast.success(
+        'Оплата прошла успешно! \n\Информация о заказе отправлена на Ваш адрес электронной почты.',
+        { duration: 5000 }
+      );
+      router.push('/');
+    }
+  }, []);
+
   return (
-    <header className={cn("border-b", className)}>
+    <header className={cn('border-b', className)}>
       <Container className="flex items-center justify-between py-8">
         {/* Левая часть */}
-        <Link href={"/"}>
+        <Link href={'/'}>
           <div className="flex items-center gap-4">
-            <Image src={"/logo.svg"} alt="Logo" width={42} height={42} />
+            <Image src={'/logo.svg'} alt="Logo" width={42} height={42} />
             <div>
               <h1 className="text-2xl uppercase font-black">Next Pizza</h1>
               <p className="text-sm text-gray-400 leading-3">
@@ -45,7 +62,7 @@ const Header: React.FC<Props> = ({
 
         {/* Правая часть */}
         <div className="flex items-center gap-3">
-          <Button variant={"outline"}>
+          <Button variant={'outline'}>
             <User size={16} />
             Войти
           </Button>

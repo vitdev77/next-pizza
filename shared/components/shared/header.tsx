@@ -1,18 +1,18 @@
 'use client';
 
 import * as React from 'react';
-import { User } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
+import toast from 'react-hot-toast';
 import {
-  Button,
+  AuthModal,
   CartButton,
   Container,
+  ProfileButton,
   SearchInput,
 } from '@/shared/components';
 import { cn } from '@/shared/lib';
-import toast from 'react-hot-toast';
 
 interface Props {
   hasSearch?: boolean;
@@ -25,6 +25,8 @@ const Header: React.FC<Props> = ({
   hasCart = true,
   className,
 }) => {
+  const [openAuthModal, setOpenAuthModal] = React.useState(false);
+
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -62,10 +64,12 @@ const Header: React.FC<Props> = ({
 
         {/* Правая часть */}
         <div className="flex items-center gap-3">
-          <Button variant={'outline'}>
-            <User size={16} />
-            Войти
-          </Button>
+          <AuthModal
+            open={openAuthModal}
+            onClose={() => setOpenAuthModal(false)}
+          />
+
+          <ProfileButton onClickSignIn={() => setOpenAuthModal(true)} />
 
           {hasCart && <CartButton />}
         </div>

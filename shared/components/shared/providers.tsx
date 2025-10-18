@@ -9,12 +9,7 @@ export const Providers: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <>
       <SessionProvider>{children}</SessionProvider>
-      <NextTopLoader
-        color="#8e51ff"
-        showSpinner={true}
-        height={2}
-        easing="ease-in-out"
-      />
+      <NextTopLoader color="#8e51ff" showSpinner={false} easing="ease-in-out" />
       <Toaster />
     </>
   );

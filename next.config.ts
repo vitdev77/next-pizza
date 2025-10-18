@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.dribbble.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'github.githubassets.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fonts.gstatic.com',
+        pathname: '**',
+      },
     ],
   },
   // eslint: { ignoreDuringBuilds: true }, // linting step (ESLint)

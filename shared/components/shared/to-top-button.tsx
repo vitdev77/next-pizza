@@ -45,7 +45,7 @@ export const ToTopButton: React.FC = () => {
         >
           <ArrowUpToLine
             size={32}
-            className="text-gray-500 opacity-20 transition-all group-hover:opacity-100"
+            className="text-gray-600 opacity-25 transition-all group-hover:opacity-100"
           />
         </div>
       ) : (

@@ -1,12 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Container,
   Filters,
   ProductsGroupList,
   Title,
   TopBar,
-} from "@/shared/components";
-import { findPizzas, GetSearchParams } from "@/shared/lib/find-pizzas";
+} from '@/shared/components';
+import { findPizzas, GetSearchParams } from '@/shared/lib/find-pizzas';
 
 export default async function Home({
   searchParams,
@@ -18,7 +18,7 @@ export default async function Home({
   return (
     <>
       <Container className="mt-10">
-        <Title text="Все пиццы" size={"lg"} className="font-extrabold" />
+        <Title text="Все товары" size={'lg'} className="font-extrabold" />
       </Container>
       <TopBar
         categories={categories.filter(

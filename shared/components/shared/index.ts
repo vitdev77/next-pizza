@@ -23,6 +23,7 @@ export { ProductForm } from './product-form';
 export { Providers } from './providers';
 export { PizzaImage } from './pizza-image';
 export { ProductsGroupList } from './products-group-list';
+export { ProfileButton } from './profile-button';
 export { RangeSlider } from './range-slider';
 export { RequiredSymbol } from './required-symbol';
 export { SearchInput } from './search-input';

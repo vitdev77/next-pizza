@@ -20,12 +20,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'github.githubassets.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'fonts.gstatic.com',
+        hostname: 'authjs.dev',
         pathname: '**',
       },
     ],

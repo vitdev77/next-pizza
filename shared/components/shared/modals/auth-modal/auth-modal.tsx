@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import Image from 'next/image';
 import { signIn } from 'next-auth/react';
@@ -18,6 +20,8 @@ import {
 } from '@/shared/components/ui';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Title } from '../../title';
+import { LoginForm } from './forms/login-form';
+import { RegisterForm } from './forms/register-form';
 
 interface Props {
   open: boolean;
@@ -25,6 +29,12 @@ interface Props {
 }
 
 export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
+  const [type, setType] = React.useState<'login' | 'register'>('login');
+
+  const onSwitchType = () => {
+    setType(type === 'login' ? 'register' : 'login');
+  };
+
   const handleClose = () => {
     onClose();
   };
@@ -33,20 +43,31 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
       <DialogContent className="sm:max-w-[425px]">
         <VisuallyHidden>
           <DialogHeader>
-            <DialogTitle></DialogTitle>
+            <DialogTitle>Authentication</DialogTitle>
           </DialogHeader>
         </VisuallyHidden>
         <FieldGroup>
           <div className="flex flex-col items-center gap-1 text-center">
-            <Title text="Вход в аккаунт" size="md" className="font-bold" />
+            <Title
+              text={type === 'login' ? 'Вход в аккаунт' : 'Регистрация'}
+              size="md"
+              className="font-bold"
+            />
             <p className="text-muted-foreground text-sm text-balance">
-              Укажите адрес Вашей электронной почты и пароль для входа в
-              аккаунт.
+              {type === 'login'
+                ? 'Укажите адрес электронной почты и пароль для входа в аккаунт.'
+                : 'Укажите полное имя, адрес электронной почты и пароль для регистрации на сайте.'}
             </p>
           </div>
 
-          <Field>FORM</Field>
-          <FieldSeparator>или войдите через</FieldSeparator>
+          <Field>
+            {type === 'login' ? (
+              <LoginForm onClose={handleClose} />
+            ) : (
+              <RegisterForm />
+            )}
+          </Field>
+          <FieldSeparator>или</FieldSeparator>
           <Field className="grid grid-cols-2 gap-4">
             <Button
               onClick={() =>
@@ -63,7 +84,7 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
               <Image
                 height={24}
                 width={24}
-                src={'https://github.githubassets.com/favicons/favicon.svg'}
+                src={'https://authjs.dev/img/providers/github.svg'}
                 alt="GitHub Logo"
               />{' '}
               GitHub
@@ -84,14 +105,23 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
               <Image
                 height={24}
                 width={24}
-                src={
-                  'https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg'
-                }
+                src={'https://authjs.dev/img/providers/google.svg'}
                 alt="Google Logo"
               />{' '}
               Google
             </Button>
           </Field>
+          <FieldSeparator>
+            {type !== 'login' ? 'Уже есть аккаунт?' : 'Еще нет аккаунта?'}
+          </FieldSeparator>
+          <Button
+            variant={'outline'}
+            onClick={onSwitchType}
+            type="button"
+            className="h-12"
+          >
+            {type !== 'login' ? 'Войти' : 'Регистрация'}
+          </Button>
         </FieldGroup>
       </DialogContent>
     </Dialog>

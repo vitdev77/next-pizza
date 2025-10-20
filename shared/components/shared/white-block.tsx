@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Title } from "@/shared/components";
-import { cn } from "@/shared/lib";
+import * as React from 'react';
+import { Title } from '@/shared/components';
+import { cn } from '@/shared/lib';
 
 interface Props {
   title?: string;
@@ -17,7 +17,7 @@ export const WhiteBlock: React.FC<React.PropsWithChildren<Props>> = ({
   children,
 }) => {
   return (
-    <div className={cn("bg-white rounded-3xl", className)}>
+    <div className={cn('bg-white rounded-3xl', className)}>
       {title && (
         <div className="flex items-center justify-between px-7 py-5 border-b border-gray-100">
           <Title text={title} size="sm" className="font-bold" />
@@ -25,7 +25,7 @@ export const WhiteBlock: React.FC<React.PropsWithChildren<Props>> = ({
         </div>
       )}
 
-      <div className={cn("p-7", contentClassName)}>{children}</div>
+      <div className={cn('p-7', contentClassName)}>{children}</div>
     </div>
   );
 };

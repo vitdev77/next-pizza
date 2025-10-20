@@ -17,19 +17,18 @@ export const CartButton: React.FC<Props> = ({ className }) => {
   return (
     <CartDrawer>
       <Button
-        variant={'secondary'}
         loading={loading}
         className={cn('group relative', { 'w-10': loading }, className)}
       >
         {totalAmount > 0 && (
           <>
-            <b>{totalAmount} ₽</b>
-            <span className="h-4 w-[1px] bg-black/30 mx-2" />
+            <span className="font-bold">{totalAmount} ₽</span>
+            <span className="h-full w-[1px] bg-white/50 mx-2" />
           </>
         )}
         <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">
           <ShoppingCart className="relative" />
-          {totalAmount > 0 && <b>{items.length}</b>}
+          {totalAmount > 0 && <span className="font-bold">{items.length}</span>}
         </div>
         <ArrowRight
           className={cn(

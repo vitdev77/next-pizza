@@ -40,7 +40,7 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
   };
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] rounded-3xl">
         <VisuallyHidden>
           <DialogHeader>
             <DialogTitle>Authentication</DialogTitle>
@@ -56,14 +56,13 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
             <Button
               onClick={() =>
                 signIn('github', {
-                  // callbackUrl: '/',
-                  redirect: false,
+                  callbackUrl: '/',
+                  redirect: true,
                 })
               }
               variant={'secondary'}
               type="button"
-              className="flex-1"
-              size={'lg'}
+              className="flex-1 h-12"
             >
               <Image
                 height={24}
@@ -77,14 +76,13 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
             <Button
               onClick={() =>
                 signIn('google', {
-                  // callbackUrl: '/',
-                  redirect: false,
+                  callbackUrl: '/',
+                  redirect: true,
                 })
               }
               variant={'secondary'}
               type="button"
-              className="flex-1"
-              size={'lg'}
+              className="flex-1 h-12"
             >
               <Image
                 height={24}

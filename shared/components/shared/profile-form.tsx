@@ -12,6 +12,7 @@ import toast from 'react-hot-toast';
 // import { signOut } from 'next-auth/react';
 import { Container, FormInput, Title } from '.';
 import { Button } from '..';
+import { updateUserInfo } from '@/app/actions';
 
 interface Props {
   data: User;

@@ -1,5 +1,4 @@
 import {
-  ChevronDownIcon,
   EllipsisVerticalIcon,
   LogInIcon,
   LogOutIcon,
@@ -22,7 +21,6 @@ import {
   DropdownMenuTrigger,
 } from '../ui';
 import Link from 'next/link';
-import toast from 'react-hot-toast';
 
 interface Props {
   onClickSignIn?: () => void;
@@ -38,22 +36,21 @@ export const ProfileButton: React.FC<Props> = ({
   const onClickSignOut = async () => {
     await signOut({
       callbackUrl: '/',
-      redirect: false,
     });
   };
 
   return (
     <div className={className}>
       {!session ? (
-        <Button onClick={onClickSignIn}>
-          <LogInIcon size={16} /> Войти
+        <Button variant={'ghost'} onClick={onClickSignIn}>
+          Войти
         </Button>
       ) : (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-2">
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center gap-2 outline-0">
               <div className="flex items-center gap-2">
-                <Avatar className="h-8 w-8 rounded-lg">
+                <Avatar className="h-9 w-9 rounded-lg">
                   <AvatarImage
                     src={session?.user.image}
                     alt={session?.user.name}

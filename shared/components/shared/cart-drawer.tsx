@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 import {
   Button,
   Sheet,
@@ -10,17 +10,17 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/shared/components/ui";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { CartDrawerItem } from "./cart-drawer-item";
-import { declOfNum, getCartItemDetails } from "@/shared/lib";
-import { PizzaSize, PizzaType } from "@/shared/constants/pizza";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import Image from "next/image";
-import { Title } from "@/shared/components/shared";
-import { cn } from "@/shared/lib/utils";
-import { useCart } from "@/shared/hooks";
+} from '@/shared/components/ui';
+import Link from 'next/link';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { CartDrawerItem } from './cart-drawer-item';
+import { declOfNum, getCartItemDetails } from '@/shared/lib';
+import { PizzaSize, PizzaType } from '@/shared/constants/pizza';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import Image from 'next/image';
+import { Title } from '@/shared/components/shared';
+import { cn } from '@/shared/lib/utils';
+import { useCart } from '@/shared/hooks';
 
 export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { totalAmount, items, updateItemQuantity, removeCartItem } = useCart();
@@ -30,9 +30,9 @@ export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
   const onClickCountButton = (
     id: number,
     quantity: number,
-    type: "plus" | "minus"
+    type: 'plus' | 'minus'
   ) => {
-    const newQuantity = type === "plus" ? quantity + 1 : quantity - 1;
+    const newQuantity = type === 'plus' ? quantity + 1 : quantity - 1;
     updateItemQuantity(id, newQuantity);
   };
 
@@ -42,17 +42,17 @@ export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
       <SheetContent className="flex flex-col justify-between pb-0 bg-[#F4F1EE]">
         <div
           className={cn(
-            "flex flex-col h-full",
-            !totalAmount && "justify-center"
+            'flex flex-col h-full',
+            !totalAmount && 'justify-center'
           )}
         >
           {totalAmount > 0 ? (
             <SheetHeader>
               <SheetTitle>
-                В корзине{" "}
+                В корзине{' '}
                 <span className="font-bold">
-                  {items.length}{" "}
-                  {declOfNum(items.length, ["товар", "товара", "товаров"])}
+                  {items.length}{' '}
+                  {declOfNum(items.length, ['товар', 'товара', 'товаров'])}
                 </span>
               </SheetTitle>
             </SheetHeader>
@@ -67,7 +67,7 @@ export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
           {!totalAmount && (
             <div className="flex flex-col items-center justify-center w-72 mx-auto">
               <Image
-                src={"/assets/images/empty-box.png"}
+                src={'/assets/images/empty-box.png'}
                 alt="Empty cart"
                 width={120}
                 height={120}
@@ -82,7 +82,7 @@ export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
               </p>
 
               <SheetClose asChild>
-                <Button size={"lg"} className="text-base w-56 h-12">
+                <Button size={'lg'} className="text-base w-56 h-12">
                   <ArrowLeft width={20} height={20} /> Вернуться назад
                 </Button>
               </SheetClose>

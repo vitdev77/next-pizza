@@ -4,8 +4,7 @@ import * as React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { formLoginSchema, TFormLoginValues } from './schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button, FormInput, Title } from '@/shared/components';
-import Image from 'next/image';
+import { Button, FormInput } from '@/shared/components';
 import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
 

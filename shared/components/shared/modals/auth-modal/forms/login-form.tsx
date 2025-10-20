@@ -48,22 +48,6 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
         className="flex flex-col gap-5"
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        {/* <div className="flex items-center justify-between">
-          <div className="mr-2">
-            <Title text="Вход в аккаунт" size="md" className="font-bold" />
-            <p className="text-muted-foreground text-sm text-balance">
-              Укажите адрес Вашей электронной почты и пароль для входа в
-              аккаунт.
-            </p>
-          </div>
-          <Image
-            src={'/assets/images/phone-icon.png'}
-            width={60}
-            height={60}
-            alt="phone-icon"
-          />
-        </div> */}
-
         <FormInput
           name="email"
           label="E-mail"
@@ -78,7 +62,6 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
           placeholder="Ваш пароль"
           required
         />
-
         <Button
           loading={form.formState.isSubmitting}
           type="submit"

@@ -47,38 +47,22 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
           </DialogHeader>
         </VisuallyHidden>
         <FieldGroup>
-          <div className="flex flex-col items-center gap-1 text-center">
-            <Title
-              text={type === 'login' ? 'Вход в аккаунт' : 'Регистрация'}
-              size="md"
-              className="font-bold"
-            />
-            <p className="text-muted-foreground text-sm text-balance">
-              {type === 'login'
-                ? 'Укажите адрес электронной почты и пароль для входа в аккаунт.'
-                : 'Укажите полное имя, адрес электронной почты и пароль для регистрации на сайте.'}
-            </p>
-          </div>
-
-          <Field>
-            {type === 'login' ? (
-              <LoginForm onClose={handleClose} />
-            ) : (
-              <RegisterForm />
-            )}
-          </Field>
-          <FieldSeparator>или</FieldSeparator>
+          <Title
+            text={type === 'login' ? 'Вход в аккаунт' : 'Регистрация'}
+            size="md"
+            className="font-bold text-center"
+          />
           <Field className="grid grid-cols-2 gap-4">
             <Button
               onClick={() =>
                 signIn('github', {
-                  callbackUrl: '/',
-                  redirect: true,
+                  // callbackUrl: '/',
+                  redirect: false,
                 })
               }
               variant={'secondary'}
               type="button"
-              className="flex-1 cursor-pointer"
+              className="flex-1"
               size={'lg'}
             >
               <Image
@@ -93,13 +77,13 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
             <Button
               onClick={() =>
                 signIn('google', {
-                  callbackUrl: '/',
-                  redirect: true,
+                  // callbackUrl: '/',
+                  redirect: false,
                 })
               }
               variant={'secondary'}
               type="button"
-              className="flex-1 cursor-pointer"
+              className="flex-1"
               size={'lg'}
             >
               <Image
@@ -110,6 +94,19 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
               />{' '}
               Google
             </Button>
+          </Field>
+          <FieldSeparator>или</FieldSeparator>
+          <p className="text-muted-foreground text-sm text-balance text-center">
+            {type === 'login'
+              ? 'укажите адрес электронной почты и пароль для входа в аккаунт.'
+              : 'укажите полное имя, адрес электронной почты и пароль для регистрации на сайте.'}
+          </p>
+          <Field>
+            {type === 'login' ? (
+              <LoginForm onClose={handleClose} />
+            ) : (
+              <RegisterForm />
+            )}
           </Field>
           <FieldSeparator>
             {type !== 'login' ? 'Уже есть аккаунт?' : 'Еще нет аккаунта?'}

@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { X } from "lucide-react";
-import { Button } from "@/shared/components";
-import { cn } from "@/shared/lib";
-import { CartItemProps } from "./cart-item-details/cart-item-details.types";
-import * as CartItemDetails from "./cart-item-details";
+import * as React from 'react';
+import { X } from 'lucide-react';
+import { Button } from '@/shared/components';
+import { cn } from '@/shared/lib';
+import { CartItemProps } from './cart-item-details/cart-item-details.types';
+import * as CartItemDetails from './cart-item-details';
 
 interface Props extends CartItemProps {
-  onClickCountButton?: (type: "plus" | "minus") => void;
+  onClickCountButton?: (type: 'plus' | 'minus') => void;
   onClickRemove?: () => void;
   className?: string;
 }
@@ -27,9 +27,9 @@ export const CheckoutItem: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-between gap-4",
+        'flex items-center justify-between gap-4',
         {
-          "opacity-50 pointer-events-none": disabled,
+          'opacity-50 pointer-events-none': disabled,
         },
         className
       )}
@@ -47,12 +47,12 @@ export const CheckoutItem: React.FC<Props> = ({
           value={quantity}
         />
         <Button
-          size={"icon-sm"}
+          size={'icon-sm'}
           type="button"
-          variant={"link"}
+          variant={'link'}
           loading={disabled}
           onClick={onClickRemove}
-          className="cursor-pointer text-gray-400 hover:text-gray-600"
+          className="text-gray-400 hover:text-gray-600"
         >
           <X />
         </Button>

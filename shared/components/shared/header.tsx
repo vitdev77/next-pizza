@@ -69,9 +69,9 @@ const Header: React.FC<Props> = ({
             onClose={() => setOpenAuthModal(false)}
           />
 
-          <ProfileButton onClickSignIn={() => setOpenAuthModal(true)} />
-
           {hasCart && <CartButton />}
+
+          <ProfileButton onClickSignIn={() => setOpenAuthModal(true)} />
         </div>
       </Container>
     </header>

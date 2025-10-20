@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { Button, Input, Skeleton } from "@/shared/components";
+import * as React from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Button, Input, Skeleton } from '@/shared/components';
 import {
   FilterCheckbox,
   FilterCheckboxProps,
-} from "@/shared/components/shared/filter-checkbox";
+} from '@/shared/components/shared/filter-checkbox';
 
 type Item = FilterCheckboxProps;
 
@@ -30,7 +30,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   defaultItems,
   limit = 4,
   loading,
-  searchInputPlaceholder = "Найти в списке",
+  searchInputPlaceholder = 'Найти в списке',
   onClickCheckbox,
   selected,
   defaultValue,
@@ -38,7 +38,7 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   name,
 }) => {
   const [showAll, setShowAll] = React.useState(false);
-  const [searchValue, setSearchValue] = React.useState("");
+  const [searchValue, setSearchValue] = React.useState('');
 
   const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -94,14 +94,14 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       </div>
 
       {items.length > limit && (
-        <div className={showAll ? "border-t border-t-neutral-100 mt-4" : ""}>
+        <div className={showAll ? 'border-t border-t-neutral-100 mt-4' : ''}>
           <Button
-            variant={"link"}
-            size={"sm"}
-            className="flex items-center gap-1 !px-0 mt-3 cursor-pointer"
+            variant={'link'}
+            size={'sm'}
+            className="flex items-center gap-1 !px-0 mt-3"
             onClick={() => setShowAll(!showAll)}
           >
-            {showAll ? "Скрыть" : "Показать все"}
+            {showAll ? 'Скрыть' : 'Показать все'}
             {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
           </Button>
         </div>

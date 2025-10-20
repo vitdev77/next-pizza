@@ -59,7 +59,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
           className
         )}
       >
-        <InputGroup className="bg-gray-100 border-gray-100 relative z-31 has-[[data-slot=input-group-control]:focus-visible]:border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/0 has-[[data-slot=input-group-control]:focus-visible]:ring-0">
+        <InputGroup className="relative z-31 has-[[data-slot=input-group-control]:focus-visible]:border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/0 has-[[data-slot=input-group-control]:focus-visible]:ring-0">
           <InputGroupInput
             placeholder="Найти пиццу..."
             name="Search"

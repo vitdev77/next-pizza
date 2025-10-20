@@ -9,7 +9,7 @@ import {
 } from './modals/auth-modal/forms/schemas';
 import { User } from '@prisma/client';
 import toast from 'react-hot-toast';
-import { signOut } from 'next-auth/react';
+// import { signOut } from 'next-auth/react';
 import { Container, FormInput, Title } from '.';
 import { Button } from '..';
 
@@ -42,15 +42,15 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
     }
   };
 
-  const onClickSignOut = () => {
-    signOut({
-      callbackUrl: '/',
-    });
-  };
+  // const onClickSignOut = () => {
+  //   signOut({
+  //     callbackUrl: '/',
+  //   });
+  // };
   return (
     <Container className="my-10">
       <Title
-        text={`Личные данные | #${data.id}`}
+        text={`Личные данные | User #${data.id}`}
         size="md"
         className="font-bold"
       />
@@ -84,7 +84,7 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
             Сохранить
           </Button>
 
-          <Button
+          {/* <Button
             onClick={onClickSignOut}
             disabled={form.formState.isSubmitting}
             variant={'secondary'}
@@ -92,7 +92,7 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
             type="button"
           >
             Выйти
-          </Button>
+          </Button> */}
         </form>
       </FormProvider>
     </Container>

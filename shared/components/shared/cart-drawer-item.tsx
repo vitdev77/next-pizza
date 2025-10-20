@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { cn } from "@/shared/lib/utils";
+import * as React from 'react';
+import { cn } from '@/shared/lib/utils';
 
-import * as CartItem from "@/shared/components/shared/cart-item-details";
-import { CartItemProps } from "./cart-item-details/cart-item-details.types";
-import { Trash2Icon } from "lucide-react";
-import { Button } from "../ui";
+import * as CartItem from '@/shared/components/shared/cart-item-details';
+import { CartItemProps } from './cart-item-details/cart-item-details.types';
+import { Trash2Icon } from 'lucide-react';
+import { Button } from '../ui';
 
 interface Props extends CartItemProps {
-  onClickCountButton?: (type: "plus" | "minus") => void;
+  onClickCountButton?: (type: 'plus' | 'minus') => void;
   onClickRemove?: () => void;
   className?: string;
 }
@@ -28,9 +28,9 @@ export const CartDrawerItem: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        "flex bg-white p-4 gap-6",
+        'flex bg-white p-4 gap-6',
         {
-          "opacity-50 pointer-events-none": disabled,
+          'opacity-50 pointer-events-none': disabled,
         },
         className
       )}
@@ -48,11 +48,11 @@ export const CartDrawerItem: React.FC<Props> = ({
           <div className="flex items-center gap-3">
             <CartItem.Price value={price} />
             <Button
-              size={"icon-sm"}
-              variant={"link"}
+              size={'icon-sm'}
+              variant={'link'}
               onClick={onClickRemove}
               loading={disabled}
-              className="cursor-pointer text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-gray-600"
             >
               <Trash2Icon />
             </Button>

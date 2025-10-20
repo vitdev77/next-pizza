@@ -30,15 +30,6 @@ export const ToTopButton: React.FC = () => {
   return (
     <>
       {visible ? (
-        // <Button
-        //   onClick={clickHandler}
-        //   variant={'ghost'}
-        //   size={'icon-lg'}
-        //   className="sticky left-5 bottom-1/2 translate-y-1/2 cursor-pointer opacity-25 hover:opacity-100 invisible md:visible"
-        //   title="Scroll to top"
-        // >
-        //   <ArrowUpToLine />
-        // </Button>
         <div
           onClick={clickHandler}
           className="group fixed z-10 left-0 top-0 bottom-0 min-h-screen w-20 hover:bg-gray-200/20 transition-all cursor-pointer flex items-center justify-center"

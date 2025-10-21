@@ -31,12 +31,20 @@ const Header: React.FC<Props> = ({
   const searchParams = useSearchParams();
 
   React.useEffect(() => {
+    let toastMessage = '';
+
     if (searchParams.has('paid')) {
-      toast.success(
-        'Оплата прошла успешно! \n\Информация о заказе отправлена на Ваш адрес электронной почты.',
-        { duration: 5000 }
-      );
-      router.push('/');
+      toastMessage =
+        'Оплата прошла успешно! \n\Информация о заказе отправлена на Ваш адрес электронной почты.';
+    }
+
+    if (searchParams.has('verified')) {
+      toastMessage = 'Почта успешно подтверждена!';
+    }
+
+    if (toastMessage) {
+      toast.success(toastMessage, { duration: 5000 });
+      router.replace('/');
     }
   }, []);
 

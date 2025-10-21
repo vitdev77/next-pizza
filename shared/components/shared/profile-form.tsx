@@ -79,7 +79,7 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
 
           <Button
             disabled={form.formState.isSubmitting}
-            className="text-base mt-10"
+            className="text-base h-12"
             type="submit"
           >
             Сохранить

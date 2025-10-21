@@ -71,7 +71,7 @@ function Button({
         <Loader2Icon
           role="status"
           aria-label="Loading"
-          className="size-5 animate-spin"
+          className="size-4 animate-spin"
         />
       )}
     </Comp>

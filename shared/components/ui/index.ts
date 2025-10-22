@@ -11,6 +11,7 @@ export * from './field';
 export { Input } from './input';
 export * from './input-group';
 export { Label } from './label';
+export * from './own';
 export { Popover } from './popover';
 export { Select } from './select';
 export { Separator } from './separator';

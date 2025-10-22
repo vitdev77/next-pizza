@@ -18,9 +18,9 @@ export default async function Home({
 
   return (
     <>
-      <Container className="mt-10">
+      {/* <Container className="mt-10">
         <Title text="Все товары" size={'lg'} className="font-extrabold" />
-      </Container>
+      </Container> */}
       <TopBar
         categories={categories.filter(
           (category) => category.products.length > 0

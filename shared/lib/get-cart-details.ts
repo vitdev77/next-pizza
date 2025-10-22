@@ -1,5 +1,5 @@
-import { calcCartItemTotalPrice } from "@/shared/lib";
-import { CartDTO } from "../services/dto/cart.dto";
+import { calcCartItemTotalPrice } from '@/shared/lib';
+import { CartDTO } from '../services/dto/cart.dto';
 
 export type CartStateItem = {
   disabled: boolean;
@@ -19,7 +19,9 @@ interface ReturnProps {
 }
 
 export const getCartDetails = (data: CartDTO): ReturnProps => {
-  const items = data.items.map((item) => ({
+  // const items = data.items.map((item) => ({
+  // Fix console error --> Cannot read properties of null (reading 'items')
+  const items = data?.items.map((item) => ({
     id: item.id,
     quantity: item.quantity,
     name: item.productItem.product.name,
@@ -36,6 +38,8 @@ export const getCartDetails = (data: CartDTO): ReturnProps => {
 
   return {
     items,
-    totalAmount: data.totalAmount,
+    // totalAmount: data.totalAmount,
+    // Fix console error --> Cannot read properties of null (reading 'items')
+    totalAmount: data?.totalAmount,
   };
 };

@@ -2,7 +2,7 @@
 
 import { cn } from '@/shared/lib/utils';
 import * as React from 'react';
-import { Button } from '@/shared/components/ui';
+import { Button, CountingNumber } from '@/shared/components/ui';
 import { ArrowRight, ShoppingCart } from 'lucide-react';
 import { CartDrawer } from '@/shared/components/shared';
 import { useCartStore } from '@/shared/store';
@@ -22,8 +22,15 @@ export const CartButton: React.FC<Props> = ({ className }) => {
       >
         {totalAmount > 0 && (
           <>
-            <span className="font-bold">{totalAmount} ₽</span>
-            <span className="h-full w-[1px] bg-white/50 mx-2" />
+            <span className="font-bold">
+              <CountingNumber
+                number={totalAmount}
+                padStart
+                transition={{ stiffness: 500 }}
+              />{' '}
+              ₽
+            </span>
+            <span className="h-full w-px bg-white/50 mx-2" />
           </>
         )}
         <div className="flex items-center gap-1 transition duration-300 group-hover:opacity-0">

@@ -37,7 +37,7 @@ export const ProfileButton: React.FC<Props> = ({
 
   const onClickSignOut = async () => {
     await signOut({
-      callbackUrl: '/',
+      callbackUrl: '/?signout',
     });
   };
 

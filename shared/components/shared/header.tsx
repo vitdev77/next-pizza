@@ -42,14 +42,18 @@ const Header: React.FC<Props> = ({
       toastMessage = 'Почта успешно подтверждена!';
     }
 
+    if (searchParams.has('signout')) {
+      toastMessage = 'Вы вышли из аккаунта.';
+    }
+
     if (toastMessage) {
-      toast.success(toastMessage, { duration: 5000 });
       router.replace('/');
+      toast.success(toastMessage, { duration: 5000 });
     }
   }, []);
 
   return (
-    <header className={cn('border-b', className)}>
+    <header className={cn('', className)}>
       <Container className="flex items-center justify-between py-8">
         {/* Левая часть */}
         <Link href={'/'}>

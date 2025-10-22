@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { useFormContext } from "react-hook-form";
+import * as React from 'react';
+import { useFormContext } from 'react-hook-form';
 import {
   Field,
   FieldError,
@@ -9,8 +9,8 @@ import {
   Textarea,
   ClearButton,
   RequiredSymbol,
-} from "@/shared/components";
-import { cn } from "@/shared/lib";
+} from '@/shared/components';
+import { cn } from '@/shared/lib';
 
 interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
@@ -37,7 +37,7 @@ export const FormTextarea: React.FC<Props> = ({
   const errorText = errors[name]?.message as string;
 
   const onClickClear = () => {
-    setValue(name, "", { shouldValidate: true });
+    setValue(name, '', { shouldValidate: true });
   };
 
   return (
@@ -45,14 +45,19 @@ export const FormTextarea: React.FC<Props> = ({
       {label && (
         <FieldLabel
           htmlFor={name}
-          className={cn("font-bold", { "gap-1": required }, className)}
+          className={cn('font-bold', { 'gap-1': required }, className)}
         >
           {label}
           {required && <RequiredSymbol />}
         </FieldLabel>
       )}
       <div className="relative">
-        <Textarea id={name} {...register(name)} {...props} />
+        <Textarea
+          className="resize-none"
+          id={name}
+          {...register(name)}
+          {...props}
+        />
         {value && <ClearButton onClick={onClickClear} />}
       </div>
       {errorText && <FieldError>{errorText}</FieldError>}

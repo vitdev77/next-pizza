@@ -1,5 +1,6 @@
-import * as React from "react";
-import { cn } from "@/shared/lib";
+import * as React from 'react';
+import { cn } from '@/shared/lib';
+import { Skeleton } from '@/shared/components';
 
 interface Props {
   className?: string;
@@ -7,13 +8,13 @@ interface Props {
 
 export const CheckoutItemSkeleton: React.FC<Props> = ({ className }) => {
   return (
-    <div className={cn("flex items-center justify-between gap-4", className)}>
+    <div className={cn('flex items-center justify-between gap-4', className)}>
       <div className="flex items-center gap-5">
-        <div className="w-[60px] h-[60px] bg-accent rounded-full animate-pulse" />
-        <h2 className="w-72 h-5 bg-accent rounded-md animate-pulse" />
+        <Skeleton className="size-15 rounded-full" />
+        <Skeleton className="w-72 h-5" />
       </div>
-      <div className="w-12 h-5 bg-accent rounded-md animate-pulse" />
-      <div className="w-[146px] h-8 bg-accent rounded-md animate-pulse" />
+      <Skeleton className="w-12 h-5" />
+      <Skeleton className="w-[146px] h-8" />
     </div>
   );
 };

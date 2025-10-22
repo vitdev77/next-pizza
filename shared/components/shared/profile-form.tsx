@@ -61,19 +61,33 @@ export const ProfileForm: React.FC<Props> = ({ data }) => {
           className="flex flex-col gap-5 w-96 mt-10"
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <FormInput type="email" name="email" label="E-Mail" required />
-          <FormInput type="text" name="fullName" label="Полное имя" required />
+          <FormInput
+            type="email"
+            name="email"
+            label="E-Mail"
+            placeholder="user@example.com"
+            required
+          />
+          <FormInput
+            type="text"
+            name="fullName"
+            label="Полное имя"
+            placeholder="John Doe"
+            required
+          />
 
           <FormInput
             type="password"
             name="password"
             label="Новый пароль"
+            placeholder="••••••••"
             required
           />
           <FormInput
             type="password"
             name="confirmPassword"
             label="Повторите пароль"
+            placeholder="••••••••"
             required
           />
 

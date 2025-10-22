@@ -114,6 +114,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

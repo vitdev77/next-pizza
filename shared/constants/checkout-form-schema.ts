@@ -3,11 +3,11 @@ import * as z from 'zod';
 export const checkoutFormSchema = z.object({
   firstName: z
     .string()
-    .min(2, { error: 'Имя должно содержать не менее 2-х символов' }),
+    .min(1, { error: 'Имя должно содержать не менее одого символа' }),
   lastName: z
     .string()
-    .min(2, { error: 'Фамилия должна содержать не менее 2-х символов' }),
-  email: z.email({ error: 'Некорректный формат электронной почты' }),
+    .min(1, { error: 'Фамилия должна содержать не менее одного символа' }),
+  email: z.email({ error: 'Некорректный адрес электронной почты' }),
   phone: z.string().min(10, { error: 'Укажите корректный номер телефона' }),
   address: z
     .string()

@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         hostname: 'authjs.dev',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.inappstory.ru',
+        pathname: '**',
+      },
     ],
   },
   // eslint: { ignoreDuringBuilds: true }, // linting step (ESLint)

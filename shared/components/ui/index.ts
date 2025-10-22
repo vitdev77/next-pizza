@@ -1,4 +1,5 @@
 export * from './accordion';
+export * from './alert';
 export * from './avatar';
 export { Button } from './button';
 export { Checkbox } from './checkbox';

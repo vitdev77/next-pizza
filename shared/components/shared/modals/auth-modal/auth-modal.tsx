@@ -97,7 +97,7 @@ export const AuthModal: React.FC<Props> = ({ open, onClose }) => {
           <p className="text-muted-foreground text-sm text-balance text-center">
             {type === 'login'
               ? 'укажите адрес электронной почты и пароль для входа в аккаунт.'
-              : 'укажите полное имя, адрес электронной почты и пароль для регистрации на сайте.'}
+              : 'укажите адрес электронной почты, полное имя и пароль для регистрации на сайте.'}
           </p>
           <Field>
             {type === 'login' ? (

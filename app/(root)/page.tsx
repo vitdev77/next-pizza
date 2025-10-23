@@ -30,7 +30,7 @@ export default async function Home({
       <Stories />
 
       <Container className="mt-10 pb-14">
-        <div className="flex gap-[80px]">
+        <div className="flex gap-20">
           {/* Фильтрация */}
           <div className="w-[250px]">
             <React.Suspense>

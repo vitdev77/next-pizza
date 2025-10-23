@@ -21,6 +21,7 @@ import Image from 'next/image';
 import { Title } from '@/shared/components/shared';
 import { cn } from '@/shared/lib/utils';
 import { useCart } from '@/shared/hooks';
+import SlotCounter from 'react-slot-counter';
 
 export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { totalAmount, items, updateItemQuantity, removeCartItem } = useCart();
@@ -118,11 +119,13 @@ export const CartDrawer: React.FC<React.PropsWithChildren> = ({ children }) => {
               <SheetFooter className="mx-0 bg-white px-4 py-8">
                 <div className="flex mb-4">
                   <span className="flex flex-1 text-lg text-neutral-500">
-                    Итого
+                    Стоимость корзины
                     <div className="flex-1 border-b border-dashed border-b-neutral-200 relative -top-1 mx-2" />
                   </span>
 
-                  <span className="font-bold text-lg">{totalAmount} ₽</span>
+                  <span className="font-bold text-lg">
+                    <SlotCounter value={totalAmount} /> ₽
+                  </span>
                 </div>
 
                 <Link href="/checkout">

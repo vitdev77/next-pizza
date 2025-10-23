@@ -19,6 +19,7 @@ export { GroupVariants } from './group-variants';
 export { Header } from './header';
 export { IngredientItem } from './ingredient-item';
 export { InfoBlock } from './info-block';
+export { LoadingDots } from './loading-dots';
 export { ProductCard } from './product-card';
 export { ProductForm } from './product-form';
 export { ProfileForm } from './profile-form';

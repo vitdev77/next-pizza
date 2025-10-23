@@ -4,6 +4,7 @@ import { Plus } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, Title } from '@/shared/components';
+import { cn } from '@/shared/lib';
 
 interface Props {
   id: number;
@@ -24,12 +25,12 @@ export const ProductCard: React.FC<Props> = ({
 }) => {
   return (
     <div className={className}>
-      <Link href={`/product/${id}`}>
+      <Link className="flex flex-col h-full" href={`/product/${id}`}>
         <div className="flex justify-center p-6 bg-secondary/50 rounded-lg h-[260px]">
           <Image height={212} width={215} src={imageUrl} alt={name} />
         </div>
 
-        <Title text={name} size="sm" className="font-bold mb-1 mt-3" />
+        <Title text={name} size="sm" className="font-bold mb-1 mt-3 grow" />
 
         <p className="text-sm text-gray-400">
           {ingredients

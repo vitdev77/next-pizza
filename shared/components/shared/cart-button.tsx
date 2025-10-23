@@ -2,10 +2,11 @@
 
 import { cn } from '@/shared/lib/utils';
 import * as React from 'react';
-import { Button, CountingNumber } from '@/shared/components/ui';
+import { Button } from '@/shared/components/ui';
 import { ArrowRight, ShoppingCart } from 'lucide-react';
 import { CartDrawer } from '@/shared/components/shared';
 import { useCartStore } from '@/shared/store';
+import SlotCounter from 'react-slot-counter';
 
 interface Props {
   className?: string;
@@ -23,12 +24,7 @@ export const CartButton: React.FC<Props> = ({ className }) => {
         {totalAmount > 0 && (
           <>
             <span className="font-bold">
-              <CountingNumber
-                number={totalAmount}
-                padStart
-                transition={{ stiffness: 500 }}
-              />{' '}
-              ₽
+              <SlotCounter value={totalAmount} /> ₽
             </span>
             <span className="h-full w-px bg-white/50 mx-2" />
           </>
